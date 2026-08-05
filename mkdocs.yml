@@ -1,5 +1,5 @@
 site_name: go-bootloaders
-site_description: Pure-Go bootloaders — an early-stage effort to reimplement the classic boot stack (GRUB, Limine, rEFInd, Syslinux, systemd-boot, U-Boot) in Go. No cgo. Nothing has shipped yet — this is a roadmap.
+site_description: Pure-Go bootloader tooling — grub and systemd-boot ship today as production consumers of the storage/firmware/TPM stack; Limine, rEFInd, Syslinux, and U-Boot remain on the roadmap. No cgo.
 site_url: https://go-bootloaders.github.io/docs/
 repo_url: https://github.com/go-bootloaders
 repo_name: go-bootloaders
@@ -37,4 +37,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Components:
+      - "grub — GRUB administration toolkit": components/grub.md
+      - "systemd-boot — BLS reader + integration": components/systemd-boot.md
   - Roadmap & Status: roadmap.md
