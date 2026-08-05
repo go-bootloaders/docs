@@ -10,29 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://go-bootloaders.github.io/docs/0.1/roadmap/">
+        <link rel="canonical" href="https://go-bootloaders.github.io/docs/0.1/components/systemd-boot/">
       
       
-        <link rel="prev" href="../components/systemd-boot/">
+        <link rel="prev" href="../grub/">
       
+      
+        <link rel="next" href="../../roadmap/">
       
       
         
       
       
-      <link rel="icon" href="../assets/logo.svg">
+      <link rel="icon" href="../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Roadmap & Status - go-bootloaders</title>
+        <title>systemd-boot — BLS reader + integration - go-bootloaders</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/brand.css">
+      <link rel="stylesheet" href="../../stylesheets/brand.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#roadmap-status" class="md-skip">
+        <a href="#systemd-boot-bls-reader-integration" class="md-skip">
           Skip to content
         </a>
       
@@ -98,9 +100,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="go-bootloaders" class="md-header__button md-logo" aria-label="go-bootloaders" data-md-component="logo">
+    <a href="../.." title="go-bootloaders" class="md-header__button md-logo" aria-label="go-bootloaders" data-md-component="logo">
       
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -117,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Roadmap & Status
+              systemd-boot — BLS reader + integration
             
           </span>
         </div>
@@ -235,9 +237,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="go-bootloaders" class="md-nav__button md-logo" aria-label="go-bootloaders" data-md-component="logo">
+    <a href="../.." title="go-bootloaders" class="md-nav__button md-logo" aria-label="go-bootloaders" data-md-component="logo">
       
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
     </a>
     go-bootloaders
@@ -264,7 +266,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -288,8 +290,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -300,11 +304,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -325,7 +329,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -343,7 +347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../components/grub/" class="md-nav__link">
+      <a href="../grub/" class="md-nav__link">
         
   
   
@@ -368,41 +372,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../components/systemd-boot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    systemd-boot — BLS reader + integration
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -422,7 +391,7 @@
   <span class="md-ellipsis">
     
   
-    Roadmap & Status
+    systemd-boot — BLS reader + integration
   
 
     
@@ -440,7 +409,7 @@
   <span class="md-ellipsis">
     
   
-    Roadmap & Status
+    systemd-boot — BLS reader + integration
   
 
     
@@ -466,10 +435,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#status-legend" class="md-nav__link">
+  <a href="#what-it-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Status legend
+        What it does
       
     </span>
   </a>
@@ -477,10 +446,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#target-bootloaders" class="md-nav__link">
+  <a href="#disk-image-bls-entries" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Target bootloaders
+        Disk-image → BLS entries
       
     </span>
   </a>
@@ -488,10 +457,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#supporting-repositories" class="md-nav__link">
+  <a href="#uefi-boot-variable-state" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supporting repositories
+        UEFI boot-variable state
       
     </span>
   </a>
@@ -499,10 +468,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-done-will-look-like" class="md-nav__link">
+  <a href="#measured-boot-optional-tpm-free-by-default" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What "done" will look like
+        Measured boot (optional, TPM-free by default)
       
     </span>
   </a>
@@ -510,10 +479,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#contributing" class="md-nav__link">
+  <a href="#why-this-exists" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Contributing
+        Why this exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License
       
     </span>
   </a>
@@ -524,6 +515,41 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap & Status
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -555,10 +581,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#status-legend" class="md-nav__link">
+  <a href="#what-it-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Status legend
+        What it does
       
     </span>
   </a>
@@ -566,10 +592,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#target-bootloaders" class="md-nav__link">
+  <a href="#disk-image-bls-entries" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Target bootloaders
+        Disk-image → BLS entries
       
     </span>
   </a>
@@ -577,10 +603,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#supporting-repositories" class="md-nav__link">
+  <a href="#uefi-boot-variable-state" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supporting repositories
+        UEFI boot-variable state
       
     </span>
   </a>
@@ -588,10 +614,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-done-will-look-like" class="md-nav__link">
+  <a href="#measured-boot-optional-tpm-free-by-default" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What "done" will look like
+        Measured boot (optional, TPM-free by default)
       
     </span>
   </a>
@@ -599,10 +625,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#contributing" class="md-nav__link">
+  <a href="#why-this-exists" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Contributing
+        Why this exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License
       
     </span>
   </a>
@@ -626,155 +674,94 @@
 
 
 
-<h1 id="roadmap-status">Roadmap &amp; Status</h1>
-<p>This page is the <strong>single source of truth</strong> for what actually exists in the
-<code>go-bootloaders</code> organization. It is deliberately conservative: a target is only
-moved past <em>Planned</em> once its repository contains real, building Go code.</p>
-<div class="admonition note">
-<p class="admonition-title">Honest status, last reviewed 2026-08-05</p>
-<p><code>grub</code> and <code>systemd-boot</code> are real, tested Go modules — both build with
-<code>CGO_ENABLED=0</code>, pass their test suites on all six 64-bit Go architectures,
-and are already consumed downstream (e.g.
-<a href="https://github.com/go-diskimages/diskimage"><code>go-diskimages/diskimage</code></a>
-imports <code>grub</code>). Neither has cut a tagged release yet, so — by the letter
-of the status legend below — both sit at <strong>In progress</strong> rather than
-<strong>Released</strong>; in practice both are usable today via Go pseudo-version
-imports, exactly as any untagged module is.</p>
-</div>
-<h2 id="status-legend">Status legend</h2>
+<h1 id="systemd-boot-bls-reader-integration">systemd-boot — BLS reader + integration</h1>
+<p><code>github.com/go-bootloaders/systemd-boot</code> is a pure-Go (<code>CGO_ENABLED=0</code>)
+reader and integration layer for
+<a href="https://www.freedesktop.org/software/systemd/man/systemd-boot.html">systemd-boot</a>,
+following the
+<a href="https://uapi-group.org/specifications/specs/boot_loader_specification/">Boot Loader Specification</a>.</p>
+<p>It is a production-ready consumer of the pure-Go storage / firmware / boot
+stack: point it at a <strong>whole disk image</strong> and it GPT-locates the EFI System
+Partition, mounts its FAT32 filesystem, and returns resolved BLS boot entries
+— then optionally reads the UEFI boot-variable state and measures the
+selected kernel/initrd/cmdline into TPM PCRs, all with no cgo and no
+shell-outs.</p>
+<h2 id="what-it-does">What it does</h2>
 <table>
 <thead>
 <tr>
-<th>State</th>
-<th>Meaning</th>
+<th>Capability</th>
+<th>Backed by</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Planned</strong></td>
-<td>Named in the roadmap; repository does not yet exist or holds no code.</td>
+<td>Parse <code>/loader/loader.conf</code> + <code>/loader/entries/*.conf</code> → resolved <code>Boot</code> entries (linux/initrd/options, BLS sort order, wildcard <code>default</code>)</td>
+<td>this package</td>
 </tr>
 <tr>
-<td><strong>Scaffolding</strong></td>
-<td>Repository exists with placeholder files (README, LICENSE) but no Go code.</td>
+<td>Disk image → ESP → resolved entries with zero manual FS plumbing</td>
+<td><a href="https://github.com/go-volumes/gpt"><code>go-volumes/gpt</code></a> + <a href="https://github.com/go-filesystems/detect"><code>go-filesystems/detect</code></a> (<code>fat32reg</code>)</td>
 </tr>
 <tr>
-<td><strong>In progress</strong></td>
-<td>Real Go code is landing; no tagged release yet.</td>
+<td>Read UEFI <code>BootOrder</code>/<code>Boot####</code> LoadOptions, set <code>BootNext</code>/<code>BootOrder</code>, find which <code>Boot####</code> is systemd-boot</td>
+<td><a href="https://github.com/go-filesystems/uefi"><code>go-filesystems/uefi</code></a></td>
 </tr>
 <tr>
-<td><strong>Released</strong></td>
-<td>A tagged release exists and the module is importable.</td>
+<td>Measured boot: extend kernel (PCR 4) / cmdline (PCR 8) / initrd (PCR 9) into a TPM + emit a TCG event log</td>
+<td><a href="https://github.com/go-tpm2"><code>go-tpm2</code></a> (<code>tpm2</code>, <code>attest</code>, <code>common</code>)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="target-bootloaders">Target bootloaders</h2>
-<table>
-<thead>
-<tr>
-<th>Target</th>
-<th>Models</th>
-<th>State</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/go-bootloaders/grub"><code>grub</code></a></td>
-<td>GRUB multi-OS boot menu</td>
-<td><strong>In progress</strong></td>
-<td><code>github.com/go-bootloaders/grub</code>, 93.9% test coverage. Opens a GPT disk image, mounts the ESP (FAT32) and a Linux <code>/boot</code> (ext4/btrfs) read-write, reads/generates/patches <code>grub.cfg</code> on both, registers a UEFI boot entry, and optionally measures <code>grub.cfg</code> + kernels/initrds into TPM PCRs. No tagged release yet.</td>
-</tr>
-<tr>
-<td><a href="https://github.com/go-bootloaders/systemd-boot"><code>systemd-boot</code></a></td>
-<td>systemd-boot (<code>sd-boot</code>), Boot Loader Specification</td>
-<td><strong>In progress</strong></td>
-<td><code>github.com/go-bootloaders/systemd-boot</code>, 92.9% test coverage. GPT-locates the ESP, parses <code>loader.conf</code> + BLS <code>entries/*.conf</code> into resolved boot entries, reads/writes UEFI <code>BootOrder</code>/<code>BootNext</code>, and measures the selected kernel/initrd/cmdline into TPM PCRs with a TCG event log. No tagged release yet.</td>
-</tr>
-<tr>
-<td><code>limine</code></td>
-<td>Limine boot protocol (modern x86_64 / UEFI)</td>
-<td><strong>Planned</strong></td>
-<td>Not yet created.</td>
-</tr>
-<tr>
-<td><code>refind</code></td>
-<td>rEFInd graphical UEFI boot manager</td>
-<td><strong>Planned</strong></td>
-<td>Not yet created.</td>
-</tr>
-<tr>
-<td><code>syslinux</code></td>
-<td>Syslinux / ISOLINUX / PXELINUX</td>
-<td><strong>Planned</strong></td>
-<td>Not yet created.</td>
-</tr>
-<tr>
-<td><code>u-boot</code></td>
-<td>U-Boot embedded / SoC bootloader</td>
-<td><strong>Planned</strong></td>
-<td>Not yet created.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="supporting-repositories">Supporting repositories</h2>
-<p>These are not bootloaders but are part of the organization:</p>
-<table>
-<thead>
-<tr>
-<th>Repo</th>
-<th>What it is</th>
-<th>State</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/go-bootloaders/brand"><code>brand</code></a></td>
-<td>Logos and icons (the family brand kit)</td>
-<td>Populated</td>
-</tr>
-<tr>
-<td><a href="https://github.com/go-bootloaders/go-bootloaders.github.io"><code>go-bootloaders.github.io</code></a></td>
-<td>Organization landing page</td>
-<td>Populated</td>
-</tr>
-<tr>
-<td><a href="https://github.com/go-bootloaders/docs"><code>docs</code></a></td>
-<td>This documentation site (MkDocs Material + mike)</td>
-<td>Populated</td>
-</tr>
-</tbody>
-</table>
-<p><code>go-bootloaders</code> does not maintain its own <code>interface</code> repo; both <code>grub</code> and
-<code>systemd-boot</code> consume the shared filesystem/partition contracts from
-<a href="https://github.com/go-filesystems/interface"><code>go-filesystems/interface</code></a> and
-<a href="https://github.com/go-volumes/gpt"><code>go-volumes/gpt</code></a> as ordinary pseudo-version
-dependencies.</p>
-<h2 id="what-done-will-look-like">What "done" will look like</h2>
-<p>A target graduates from <em>Planned</em> → <em>Released</em> when it can, from source with
-<code>CGO_ENABLED=0</code>:</p>
-<ol>
-<li><strong>Parse its native configuration</strong> (e.g. <code>grub.cfg</code>, <code>loader.conf</code>,
-   <code>extlinux.conf</code>) into a typed model.</li>
-<li><strong>Probe partitions and filesystems</strong> enough to locate kernels and initrds.</li>
-<li><strong>Load a kernel and initrd</strong> and present the appropriate boot menu.</li>
-<li><strong>Hand off</strong> to the loaded kernel via the right protocol (Multiboot2,
-   Linux boot protocol, EFI stub, …).</li>
-<li>Ship with tests and a tagged release.</li>
-</ol>
-<p><code>grub</code> and <code>systemd-boot</code> satisfy 1–3 today (config parsing, filesystem/partition
-probing, and kernel/initrd discovery); actual kernel handoff (4) is out of scope
-for both — they operate on <strong>disk images</strong> ahead of boot (preparing, patching,
-inspecting, and measuring what a real firmware/bootloader will later load), not
-as a running bootloader stage themselves. Only step 5 — a tagged release — is
-outstanding for both before they'd count as <em>Released</em> by this page's own bar.</p>
-<h2 id="contributing">Contributing</h2>
-<p><code>grub</code> and <code>systemd-boot</code> are in active use; issues and PRs against them follow
-the normal Go module workflow (tests, <code>CGO_ENABLED=0</code>, all six 64-bit
-architectures). For the four remaining <em>Planned</em> targets, the most useful
-contributions right now are design discussion and prototype code in the target
-repositories. Track progress through the
-<a href="https://github.com/go-bootloaders">organization</a> directly.</p>
+<h2 id="disk-image-bls-entries">Disk-image → BLS entries</h2>
+<p><code>OpenImage</code> does the whole pipeline — GPT-locate the ESP, detect + mount its
+FAT32 filesystem, adapt it to the reader, parse <code>loader.conf</code> — behind a
+single call. The caller MUST <code>Close</code> the returned <code>Image</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">im</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">systemdboot</span><span class="p">.</span><span class="nx">OpenImage</span><span class="p">(</span><span class="s">&quot;/dev/sda&quot;</span><span class="p">)</span><span class="w">     </span><span class="c1">// or a disk-image file</span>
+<span class="k">defer</span><span class="w"> </span><span class="nx">im</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
+
+<span class="nx">def</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">im</span><span class="p">.</span><span class="nx">Default</span><span class="p">()</span><span class="w">        </span><span class="c1">// the active entry (loader.conf default, or BLS-highest)</span>
+<span class="nx">all</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">im</span><span class="p">.</span><span class="nx">Entries</span><span class="p">()</span><span class="w">        </span><span class="c1">// every entry, newest first</span>
+</code></pre></div>
+<p>Callers who <strong>already</strong> hold a mounted ESP filesystem (any <code>go-filesystems</code>
+driver) skip the disk plumbing with <code>NewFS</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">fs</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">systemdboot</span><span class="p">.</span><span class="nx">NewFS</span><span class="p">(</span><span class="nx">mountedESP</span><span class="p">)</span><span class="w">          </span><span class="c1">// filesystem.Filesystem → FS</span>
+<span class="nx">boot</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">systemdboot</span><span class="p">.</span><span class="nx">Default</span><span class="p">(</span><span class="nx">fs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="p">)</span><span class="w">      </span><span class="c1">// espRoot within the mount</span>
+</code></pre></div>
+<h2 id="uefi-boot-variable-state">UEFI boot-variable state</h2>
+<div class="highlight"><pre><span></span><code><span class="nx">store</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">uefi</span><span class="p">.</span><span class="nx">Open</span><span class="p">(</span><span class="s">&quot;OVMF_VARS.fd&quot;</span><span class="p">)</span>
+<span class="k">defer</span><span class="w"> </span><span class="nx">store</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
+
+<span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">systemdboot</span><span class="p">.</span><span class="nx">ReadBootState</span><span class="p">(</span><span class="nx">store</span><span class="p">)</span>
+<span class="c1">// state.Order, state.Entries, state.SystemdBootSlots, state.BootNext</span>
+
+<span class="nx">systemdboot</span><span class="p">.</span><span class="nx">SetBootNext</span><span class="p">(</span><span class="nx">store</span><span class="p">,</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">SystemdBootSlots</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="w">  </span><span class="c1">// boot sd-boot once</span>
+<span class="nx">systemdboot</span><span class="p">.</span><span class="nx">MakeSystemdBootFirst</span><span class="p">(</span><span class="nx">store</span><span class="p">)</span><span class="w">                    </span><span class="c1">// make it default</span>
+</code></pre></div>
+<h2 id="measured-boot-optional-tpm-free-by-default">Measured boot (optional, TPM-free by default)</h2>
+<div class="highlight"><pre><span></span><code><span class="c1">// nil Extender → pure event-log dry run, no TPM touched.</span>
+<span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">systemdboot</span><span class="p">.</span><span class="nx">MeasureBoot</span><span class="p">(</span><span class="nx">im</span><span class="p">,</span><span class="w"> </span><span class="nx">def</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="mi">512</span><span class="o">&lt;&lt;</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="c1">// or measure into hardware over a crb/tis transport:</span>
+<span class="nx">tpm</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">tpm2</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">transport</span><span class="p">)</span>
+<span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">systemdboot</span><span class="p">.</span><span class="nx">MeasureBoot</span><span class="p">(</span><span class="nx">im</span><span class="p">,</span><span class="w"> </span><span class="nx">def</span><span class="p">,</span><span class="w"> </span><span class="nx">tpm</span><span class="p">,</span><span class="w"> </span><span class="mi">512</span><span class="o">&lt;&lt;</span><span class="mi">20</span><span class="p">)</span>
+</code></pre></div>
+<p>The TPM dependency sits behind the injected <code>Extender</code> interface, so the tool
+builds and runs with no TPM present.</p>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>The conventional <code>/boot/{vmlinuz,Image}-*</code> glob misses <strong>every systemd-boot
+install</strong> — NixOS, Clear Linux, and bespoke Arch/Gentoo setups put the kernel
+at content-addressed <code>/EFI/&lt;distro&gt;/&lt;hash&gt;-*</code> paths selected through
+<code>/loader/entries/*.conf</code>. Reading the canonical BLS path covers the whole
+ecosystem at once.</p>
+<h2 id="status">Status</h2>
+<p>Validated on all six 64-bit Go architectures (amd64, arm64, riscv64,
+loong64, ppc64le, and big-endian s390x). 92.9% test coverage. All
+dependencies resolve from the public Go module proxy by pseudo-version —
+no <code>replace =&gt; ../sibling</code>, no local sibling clone, no vendoring. No tagged
+release yet.</p>
+<h2 id="license">License</h2>
+<p>BSD-3-Clause — see <a href="https://github.com/go-bootloaders/systemd-boot/blob/main/LICENSE">LICENSE</a>.</p>
 
 
 
@@ -830,10 +817,10 @@ repositories. Track progress through the
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "search.suggest"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

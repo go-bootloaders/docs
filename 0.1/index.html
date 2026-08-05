@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Pure-Go bootloaders — an early-stage effort to reimplement the classic boot stack (GRUB, Limine, rEFInd, Syslinux, systemd-boot, U-Boot) in Go. No cgo. Nothing has shipped yet — this is a roadmap.">
+        <meta name="description" content="Pure-Go bootloader tooling — grub and systemd-boot ship today as production consumers of the storage/firmware/TPM stack; Limine, rEFInd, Syslinux, and U-Boot remain on the roadmap. No cgo.">
       
       
       
@@ -14,14 +14,14 @@
       
       
       
-        <link rel="next" href="roadmap/">
+        <link rel="next" href="components/grub/">
       
       
         
       
       
       <link rel="icon" href="assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
@@ -335,21 +335,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#planned-family" class="md-nav__link">
+  <a href="#family-status" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Planned family
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#where-things-actually-stand" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Where things actually stand
+        Family status
       
     </span>
   </a>
@@ -359,6 +348,121 @@
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Components
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Components
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/grub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    grub — GRUB administration toolkit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/systemd-boot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    systemd-boot — BLS reader + integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -429,21 +533,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#planned-family" class="md-nav__link">
+  <a href="#family-status" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Planned family
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#where-things-actually-stand" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Where things actually stand
+        Family status
       
     </span>
   </a>
@@ -468,16 +561,16 @@
 
 
 <h1 id="go-bootloaders">go-bootloaders</h1>
-<p>Pure-Go <strong>bootloaders</strong> — an effort to reimplement the classic boot stack in Go,
-with no cgo.</p>
-<div class="admonition warning">
-<p class="admonition-title">Early stage — nothing has shipped yet</p>
-<p><code>go-bootloaders</code> is at the <strong>planning and scaffolding</strong> stage. There is no
-released code, no installable artifact, and no API to depend on. This site
-documents the <strong>intent and roadmap</strong>, not shipped software. Treat every
-component below as <em>planned</em> until a repository has real code and a tagged
-release. See <a href="roadmap/">Roadmap &amp; Status</a> for the honest state of each
-repo.</p>
+<p>Pure-Go <strong>bootloader tooling</strong> — an effort to reimplement the classic boot
+stack in Go, with no cgo.</p>
+<div class="admonition note">
+<p class="admonition-title">Two targets shipped, four still on the roadmap</p>
+<p><a href="components/grub/"><code>grub</code></a> and <a href="components/systemd-boot/"><code>systemd-boot</code></a>
+are real, tested Go modules in production use — both are consumed by
+<a href="https://go-diskimages.github.io/docs/"><code>go-diskimages/diskimage</code></a> today.
+<code>limine</code>, <code>refind</code>, <code>syslinux</code>, and <code>u-boot</code> remain <strong>planned</strong>: named in
+the roadmap, not yet started. See <a href="roadmap/">Roadmap &amp; Status</a> for the
+honest state of each repo.</p>
 </div>
 <h2 id="the-idea">The idea</h2>
 <p>A bootloader is one of the last pieces of low-level system software still
@@ -486,12 +579,12 @@ boot stack — config parsing, filesystem and partition probing, kernel/initrd
 loading, the boot menu and the chainload/handoff to the kernel — can be expressed
 in <strong>memory-safe Go</strong>, built from source with <code>cgo</code> disabled.</p>
 <p>The aim is a family of independent modules, each one a Go-native take on a
-well-known bootloader, sharing as much common machinery (config parsing,
-filesystem readers, ELF/PE loading, EFI plumbing) as is sensible.</p>
-<h2 id="planned-family">Planned family</h2>
-<p>The organization's <a href="https://github.com/go-bootloaders/brand">brand assets</a>
-enumerate the six target bootloaders. Each is a <strong>placeholder</strong> today; see
-<a href="roadmap/">Roadmap &amp; Status</a> for the actual repository state.</p>
+well-known bootloader, sharing as much common machinery as is sensible: they
+compose with the sibling <a href="https://github.com/go-volumes">go-volumes</a> (GPT),
+<a href="https://github.com/go-filesystems">go-filesystems</a> (FAT32/ext4/btrfs/UEFI
+vars), and <a href="https://github.com/go-tpm2">go-tpm2</a> (measured boot) libraries
+rather than reimplementing that machinery per bootloader.</p>
+<h2 id="family-status">Family status</h2>
 <table>
 <thead>
 <tr>
@@ -502,9 +595,14 @@ enumerate the six target bootloaders. Each is a <strong>placeholder</strong> tod
 </thead>
 <tbody>
 <tr>
-<td><code>grub</code></td>
+<td><a href="components/grub/"><code>grub</code></a></td>
 <td>GRUB-style multi-OS boot menu</td>
-<td>Scaffolding (README/LICENSE only)</td>
+<td><strong>Shipped</strong> — production consumer of the storage/firmware/TPM stack, 93.9% test coverage</td>
+</tr>
+<tr>
+<td><a href="components/systemd-boot/"><code>systemd-boot</code></a></td>
+<td>systemd-boot (<code>sd-boot</code>) UEFI stub/menu, Boot Loader Specification</td>
+<td><strong>Shipped</strong> — 92.9% test coverage</td>
 </tr>
 <tr>
 <td><code>limine</code></td>
@@ -522,22 +620,16 @@ enumerate the six target bootloaders. Each is a <strong>placeholder</strong> tod
 <td>Planned</td>
 </tr>
 <tr>
-<td><code>systemd</code></td>
-<td>systemd-boot (<code>sd-boot</code>) UEFI stub/menu</td>
-<td>Planned</td>
-</tr>
-<tr>
 <td><code>u-boot</code></td>
 <td>U-Boot embedded/SoC bootloader</td>
 <td>Planned</td>
 </tr>
 </tbody>
 </table>
-<h2 id="where-things-actually-stand">Where things actually stand</h2>
-<p>Nothing is shippable yet. The only non-fork repositories that exist are an empty
-<code>grub</code> placeholder (a README stub and a license, no Go code), the <code>brand</code>
-asset repository, the org landing site, and this <code>docs</code> site. The full,
-honest accounting is on the <a href="roadmap/">Roadmap &amp; Status</a> page.</p>
+<p>Neither <code>grub</code> nor <code>systemd-boot</code> has cut a tagged release yet; both are
+consumed by downstream modules today via Go pseudo-versions (no <code>replace</code>
+directives, no vendoring). See <a href="roadmap/">Roadmap &amp; Status</a> for exact
+commit/coverage figures and what remains before a v1 tag.</p>
 
 
 
@@ -596,7 +688,7 @@ honest accounting is on the <a href="roadmap/">Roadmap &amp; Status</a> page.</p
       <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.top", "content.code.copy", "search.suggest"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
