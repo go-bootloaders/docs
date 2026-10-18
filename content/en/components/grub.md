@@ -1,4 +1,9 @@
-# grub — GRUB administration toolkit
+---
+title: "grub — GRUB administration toolkit"
+weight: 30
+---
+
+# grub — GRUB administration toolkit {#grub-grub-administration-toolkit}
 
 `github.com/go-bootloaders/grub` is a pure-Go (`CGO_ENABLED=0`) **GRUB
 administration toolkit** for disk images. It is a production consumer of the
@@ -21,7 +26,7 @@ storage / firmware / boot stack:
   measured boot — optional, behind an injected firmware `Caller`, so the tool
   stays TPM-free when no TPM is present.
 
-## What it does
+## What it does {#what-it-does}
 
 | Capability | ESP entry point | `/boot` (ext4/btrfs) entry point |
 |---|---|---|
@@ -41,9 +46,9 @@ patching of the disk image. (`RawReplaceAll` survives only as a documented,
 deliberately-fenced low-level fallback for raw, filesystem-less regions such
 as a string baked into `core.img`.)
 
-## Usage
+## Usage {#usage}
 
-### Strip `quiet`/`splash`, add serial consoles
+### Strip `quiet`/`splash`, add serial consoles {#strip-quietsplash-add-serial-consoles}
 
 ```go
 changed, err := grub.PatchQuietImage("disk.img")
@@ -51,7 +56,7 @@ changed, err := grub.PatchQuietImage("disk.img")
 // linux line of the ESP's grub.cfg, persisting through the FAT32 driver.
 ```
 
-### Generate a fresh `grub.cfg` from on-disk kernels
+### Generate a fresh `grub.cfg` from on-disk kernels {#generate-a-fresh-grubcfg-from-on-disk-kernels}
 
 ```go
 im, err := grub.OpenImage("disk.img")
@@ -63,7 +68,7 @@ cfgPath, n, err := im.MkConfig(grub.MkConfigOptions{
 })
 ```
 
-### Register a UEFI boot entry
+### Register a UEFI boot entry {#register-a-uefi-boot-entry}
 
 ```go
 store, _ := uefi.Open("OVMF_VARS.fd")
@@ -73,7 +78,7 @@ lo := grub.BuildBootEntry("GRUB", 1, partGUID, esp, grub.DefaultGrubLoaderPath)
 num, err := grub.RegisterBootEntry(store, lo) // appends to BootOrder
 ```
 
-### Measure boot into the TPM (optional)
+### Measure boot into the TPM (optional) {#measure-boot-into-the-tpm-optional}
 
 ```go
 m := grub.NewMeasurer(firmwareCaller) // efitcg2.Caller; omit when no TPM
@@ -81,7 +86,7 @@ count, err := im.MeasureBoot(m)
 // grub.cfg -> PCR 8, each kernel/initrd -> PCR 9 (GRUB TCG conventions).
 ```
 
-## `/boot` mounting (ext4 / btrfs)
+## `/boot` mounting (ext4 / btrfs) {#boot-mounting-ext4-btrfs}
 
 `OpenImage` mounts the Linux `/boot` (or root) partition **read/write** when
 one is present, alongside the ESP, dispatched to the matching in-place driver
@@ -90,7 +95,7 @@ filesystem is reported as `ErrUnsupportedBootFS` rather than silently
 skipped; an image with no Linux partition simply has no `/boot` mount
 (`HasBoot()` is `false`, the `*OnBoot` methods return `ErrNoBoot`).
 
-## Architecture support and status
+## Architecture support and status {#architecture-support-and-status}
 
 Validated on all six 64-bit Go targets: `amd64`, `arm64`, `riscv64`,
 `loong64`, `ppc64le`, and big-endian `s390x`. 93.9% test coverage. All
@@ -99,6 +104,6 @@ dependencies resolve from the public Go proxy by pseudo-version — no
 by [`go-diskimages/diskimage`](https://go-diskimages.github.io/docs/) via
 pseudo-version import.
 
-## License
+## License {#license}
 
 BSD-3-Clause — see [LICENSE](https://github.com/go-bootloaders/grub/blob/main/LICENSE).

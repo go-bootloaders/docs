@@ -1,17 +1,25 @@
-# go-bootloaders
+---
+title: "Home"
+weight: 10
+---
+
+# go-bootloaders {#go-bootloaders}
 
 Pure-Go **bootloader tooling** — an effort to reimplement the classic boot
 stack in Go, with no cgo.
 
-!!! note "Two targets shipped, four still on the roadmap"
-    [`grub`](components/grub.md) and [`systemd-boot`](components/systemd-boot.md)
-    are real, tested Go modules in production use — both are consumed by
-    [`go-diskimages/diskimage`](https://go-diskimages.github.io/docs/) today.
-    `limine`, `refind`, `syslinux`, and `u-boot` remain **planned**: named in
-    the roadmap, not yet started. See [Roadmap & Status](roadmap.md) for the
-    honest state of each repo.
+{{< callout type="info" >}}
+**Two targets shipped, four still on the roadmap**
 
-## The idea
+[`grub`]({{< relref "components/grub.md" >}}) and [`systemd-boot`]({{< relref "components/systemd-boot.md" >}})
+are real, tested Go modules in production use — both are consumed by
+[`go-diskimages/diskimage`](https://go-diskimages.github.io/docs/) today.
+`limine`, `refind`, `syslinux`, and `u-boot` remain **planned**: named in
+the roadmap, not yet started. See [Roadmap & Status]({{< relref "roadmap.md" >}}) for the
+honest state of each repo.
+{{< /callout >}}
+
+## The idea {#the-idea}
 
 A bootloader is one of the last pieces of low-level system software still
 written almost exclusively in C and assembly. `go-bootloaders` asks whether the
@@ -26,12 +34,12 @@ compose with the sibling [go-volumes](https://github.com/go-volumes) (GPT),
 vars), and [go-tpm2](https://github.com/go-tpm2) (measured boot) libraries
 rather than reimplementing that machinery per bootloader.
 
-## Family status
+## Family status {#family-status}
 
 | Target | Models | Status |
 |--------|--------|--------|
-| [`grub`](components/grub.md) | GRUB-style multi-OS boot menu | **Shipped** — production consumer of the storage/firmware/TPM stack, 93.9% test coverage |
-| [`systemd-boot`](components/systemd-boot.md) | systemd-boot (`sd-boot`) UEFI stub/menu, Boot Loader Specification | **Shipped** — 92.9% test coverage |
+| [`grub`]({{< relref "components/grub.md" >}}) | GRUB-style multi-OS boot menu | **Shipped** — production consumer of the storage/firmware/TPM stack, 93.9% test coverage |
+| [`systemd-boot`]({{< relref "components/systemd-boot.md" >}}) | systemd-boot (`sd-boot`) UEFI stub/menu, Boot Loader Specification | **Shipped** — 92.9% test coverage |
 | `limine` | Limine modern x86_64/UEFI boot protocol | Planned |
 | `refind` | rEFInd-style graphical UEFI boot manager | Planned |
 | `syslinux` | Syslinux/ISOLINUX/PXELINUX family | Planned |
@@ -39,5 +47,5 @@ rather than reimplementing that machinery per bootloader.
 
 Neither `grub` nor `systemd-boot` has cut a tagged release yet; both are
 consumed by downstream modules today via Go pseudo-versions (no `replace`
-directives, no vendoring). See [Roadmap & Status](roadmap.md) for exact
+directives, no vendoring). See [Roadmap & Status]({{< relref "roadmap.md" >}}) for exact
 commit/coverage figures and what remains before a v1 tag.

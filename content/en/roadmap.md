@@ -1,20 +1,28 @@
-# Roadmap & Status
+---
+title: "Roadmap & Status"
+weight: 50
+---
+
+# Roadmap & Status {#roadmap-status}
 
 This page is the **single source of truth** for what actually exists in the
 `go-bootloaders` organization. It is deliberately conservative: a target is only
 moved past *Planned* once its repository contains real, building Go code.
 
-!!! note "Honest status, last reviewed 2026-08-05"
-    `grub` and `systemd-boot` are real, tested Go modules — both build with
-    `CGO_ENABLED=0`, pass their test suites on all six 64-bit Go architectures,
-    and are already consumed downstream (e.g.
-    [`go-diskimages/diskimage`](https://github.com/go-diskimages/diskimage)
-    imports `grub`). Neither has cut a tagged release yet, so — by the letter
-    of the status legend below — both sit at **In progress** rather than
-    **Released**; in practice both are usable today via Go pseudo-version
-    imports, exactly as any untagged module is.
+{{< callout type="info" >}}
+**Honest status, last reviewed 2026-08-05**
 
-## Status legend
+`grub` and `systemd-boot` are real, tested Go modules — both build with
+`CGO_ENABLED=0`, pass their test suites on all six 64-bit Go architectures,
+and are already consumed downstream (e.g.
+[`go-diskimages/diskimage`](https://github.com/go-diskimages/diskimage)
+imports `grub`). Neither has cut a tagged release yet, so — by the letter
+of the status legend below — both sit at **In progress** rather than
+**Released**; in practice both are usable today via Go pseudo-version
+imports, exactly as any untagged module is.
+{{< /callout >}}
+
+## Status legend {#status-legend}
 
 | State | Meaning |
 |-------|---------|
@@ -23,7 +31,7 @@ moved past *Planned* once its repository contains real, building Go code.
 | **In progress** | Real Go code is landing; no tagged release yet. |
 | **Released** | A tagged release exists and the module is importable. |
 
-## Target bootloaders
+## Target bootloaders {#target-bootloaders}
 
 | Target | Models | State | Notes |
 |--------|--------|-------|-------|
@@ -34,7 +42,7 @@ moved past *Planned* once its repository contains real, building Go code.
 | `syslinux` | Syslinux / ISOLINUX / PXELINUX | **Planned** | Not yet created. |
 | `u-boot` | U-Boot embedded / SoC bootloader | **Planned** | Not yet created. |
 
-## Supporting repositories
+## Supporting repositories {#supporting-repositories}
 
 These are not bootloaders but are part of the organization:
 
@@ -50,7 +58,7 @@ These are not bootloaders but are part of the organization:
 [`go-volumes/gpt`](https://github.com/go-volumes/gpt) as ordinary pseudo-version
 dependencies.
 
-## What "done" will look like
+## What "done" will look like {#what-done-will-look-like}
 
 A target graduates from *Planned* → *Released* when it can, from source with
 `CGO_ENABLED=0`:
@@ -70,7 +78,7 @@ inspecting, and measuring what a real firmware/bootloader will later load), not
 as a running bootloader stage themselves. Only step 5 — a tagged release — is
 outstanding for both before they'd count as *Released* by this page's own bar.
 
-## Contributing
+## Contributing {#contributing}
 
 `grub` and `systemd-boot` are in active use; issues and PRs against them follow
 the normal Go module workflow (tests, `CGO_ENABLED=0`, all six 64-bit
