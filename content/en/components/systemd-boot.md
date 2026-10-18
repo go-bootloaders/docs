@@ -1,4 +1,9 @@
-# systemd-boot — BLS reader + integration
+---
+title: "systemd-boot — BLS reader + integration"
+weight: 40
+---
+
+# systemd-boot — BLS reader + integration {#systemd-boot-bls-reader-integration}
 
 `github.com/go-bootloaders/systemd-boot` is a pure-Go (`CGO_ENABLED=0`)
 reader and integration layer for
@@ -13,7 +18,7 @@ Partition, mounts its FAT32 filesystem, and returns resolved BLS boot entries
 selected kernel/initrd/cmdline into TPM PCRs, all with no cgo and no
 shell-outs.
 
-## What it does
+## What it does {#what-it-does}
 
 | Capability | Backed by |
 |---|---|
@@ -22,7 +27,7 @@ shell-outs.
 | Read UEFI `BootOrder`/`Boot####` LoadOptions, set `BootNext`/`BootOrder`, find which `Boot####` is systemd-boot | [`go-filesystems/uefi`](https://github.com/go-filesystems/uefi) |
 | Measured boot: extend kernel (PCR 4) / cmdline (PCR 8) / initrd (PCR 9) into a TPM + emit a TCG event log | [`go-tpm2`](https://github.com/go-tpm2) (`tpm2`, `attest`, `common`) |
 
-## Disk-image → BLS entries
+## Disk-image → BLS entries {#disk-image-bls-entries}
 
 `OpenImage` does the whole pipeline — GPT-locate the ESP, detect + mount its
 FAT32 filesystem, adapt it to the reader, parse `loader.conf` — behind a
@@ -44,7 +49,7 @@ fs := systemdboot.NewFS(mountedESP)          // filesystem.Filesystem → FS
 boot, _ := systemdboot.Default(fs, "/")      // espRoot within the mount
 ```
 
-## UEFI boot-variable state
+## UEFI boot-variable state {#uefi-boot-variable-state}
 
 ```go
 store, _ := uefi.Open("OVMF_VARS.fd")
@@ -57,7 +62,7 @@ systemdboot.SetBootNext(store, state.SystemdBootSlots[0])  // boot sd-boot once
 systemdboot.MakeSystemdBootFirst(store)                    // make it default
 ```
 
-## Measured boot (optional, TPM-free by default)
+## Measured boot (optional, TPM-free by default) {#measured-boot-optional-tpm-free-by-default}
 
 ```go
 // nil Extender → pure event-log dry run, no TPM touched.
@@ -71,7 +76,7 @@ res, _ := systemdboot.MeasureBoot(im, def, tpm, 512<<20)
 The TPM dependency sits behind the injected `Extender` interface, so the tool
 builds and runs with no TPM present.
 
-## Why this exists
+## Why this exists {#why-this-exists}
 
 The conventional `/boot/{vmlinuz,Image}-*` glob misses **every systemd-boot
 install** — NixOS, Clear Linux, and bespoke Arch/Gentoo setups put the kernel
@@ -79,7 +84,7 @@ at content-addressed `/EFI/<distro>/<hash>-*` paths selected through
 `/loader/entries/*.conf`. Reading the canonical BLS path covers the whole
 ecosystem at once.
 
-## Status
+## Status {#status}
 
 Validated on all six 64-bit Go architectures (amd64, arm64, riscv64,
 loong64, ppc64le, and big-endian s390x). 92.9% test coverage. All
@@ -87,6 +92,6 @@ dependencies resolve from the public Go module proxy by pseudo-version —
 no `replace => ../sibling`, no local sibling clone, no vendoring. No tagged
 release yet.
 
-## License
+## License {#license}
 
 BSD-3-Clause — see [LICENSE](https://github.com/go-bootloaders/systemd-boot/blob/main/LICENSE).
